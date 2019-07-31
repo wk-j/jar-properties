@@ -10,7 +10,11 @@ public class Program {
             Properties prop = new Properties();
             prop.load(resourceAsStream);
 
-            System.err.println(prop.getProperty("connection"));
+            Properties sys = System.getProperties();
+            prop.putAll(sys);
+
+            prop.forEach((k, v) -> System.out.println(k + " = " + v));
+
         } catch (IOException e) {
             System.err.print(e.getMessage());
         }
