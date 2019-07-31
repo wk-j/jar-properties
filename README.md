@@ -1,1 +1,5 @@
 ## Properties
+
+```bash
+mvn package
+```
